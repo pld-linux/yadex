@@ -1,4 +1,5 @@
 Summary:	A Doom level (wad) editor
+Summary(pl):	Edytor poziomów Dooma (wad)
 Name:		yadex
 Version:	1.7.0
 Release:	0.3
@@ -10,7 +11,7 @@ Source0:	http://www.teaser.fr/~amajorel/yadex/%{name}-%{version}.tar.gz
 URL:		http://www.teaser.fr/~amajorel/yadex/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_sysconfdir /etc/%{name}
+%define	_sysconfdir	/etc/%{name}
 %define	_datadir	/usr/share/games/%{name}
 
 %description
@@ -25,6 +26,18 @@ detail but on the flip side allows you to control very precisely what
 you are doing. In addition, it has many advanced functions that DEU
 didn't have, to make certain tedious tasks easy.
 
+%description -l pl
+Yadex to edytor poziomów Dooma (wad) dla systemów uniksowych z X, w
+tym Linuksa. Obs³uguje Dooma alpha, Dooma beta, Dooma, Ultimate Dooma,
+Final Dooma, Dooma II, Heretica, a tak¿e, w mniej lub bardziej
+ograniczony sposób, Hexena i Strife.
+
+Yadex wywodzi siê z DEU 5.21. Dlatego, jak mo¿na by³oby oczekiwaæ,
+jest to raczej niskopoziomowy edytor wymagaj±cy dbania o wiele
+szczegó³ów, ale z drugiej strony umo¿liwiaj±cy bardzo precyzyjn±
+kontrolê nad tym, co robimy. Ponadto ma wiele zaawansowanych funkcji,
+których nie mia³ DEU, a u³atwiaj±cych niektóre zadania.
+
 %prep
 %setup -q
 
@@ -34,8 +47,8 @@ sed -i -e '/iwad/s/local\///' yadex.cfg
 # not gnu configure
 ./configure \
 	--prefix %{_prefix} \
-	--cc %{__cc} \
-	--cxx %{__cxx}
+	--cc "%{__cc}" \
+	--cxx "%{__cxx}"
 
 %{__make}
 
@@ -53,7 +66,6 @@ install yadex.cfg $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
