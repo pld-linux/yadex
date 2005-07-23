@@ -1,0 +1,16 @@
+--- ./src/yadex.h~	2003-12-15 02:37:45.000000000 +0200
++++ ./src/yadex.h	2005-07-23 04:02:43.000000000 +0300
+@@ -98,11 +98,11 @@
+ #define F_I16_D "hd"
+ #define F_I16_H "hX"
+ 
+-typedef unsigned long  u32;
++typedef unsigned int  u32;
+ #define F_U32_D "lu"
+ #define F_U32_H "lX"
+ 
+-typedef signed   long  i32;
++typedef signed   int  i32;
+ #define F_I32_D "ld"
+ #define F_I32_H "lX"
+ 
