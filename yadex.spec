@@ -50,14 +50,12 @@ sed -i -e '/iwad/s/local\///' yadex.cfg
 	--cc "%{__cc}" \
 	--cxx "%{__cxx}"
 
-%{__make}
+%{__make} \
+    X11LIBDIR=/usr/X11R6/%{_lib}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_mandir}/man6,%{_datadir}}
-
-#%{__make} install \
-#	DESTDIR=$RPM_BUILD_ROOT
 
 install obj/0/yadex $RPM_BUILD_ROOT%{_bindir}
 install ygd/* $RPM_BUILD_ROOT%{_datadir}
