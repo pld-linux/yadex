@@ -2,14 +2,14 @@ Summary:	A Doom level (wad) editor
 Summary(pl):	Edytor poziomów Dooma (wad)
 Name:		yadex
 Version:	1.7.0
-Release:	0.5
+Release:	0.6
 Epoch:		0
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://www.teaser.fr/~amajorel/yadex/%{name}-%{version}.tar.gz
 # Source0-md5:	d341abe066525394082edfd520af86ae
-Patch0:		http://glbsp.sourceforge.net/yadex/Yadex_170_Depend.diff
-Patch1:		%{name}-typedef.patch
+Patch0:		%{name}-typedef.patch
+Patch1:		http://glbsp.sourceforge.net/yadex/Yadex_170_ALL.diff
 URL:		http://www.teaser.fr/~amajorel/yadex/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
