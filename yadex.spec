@@ -2,12 +2,13 @@ Summary:	A Doom level (wad) editor
 Summary(pl):	Edytor poziomów Dooma (wad)
 Name:		yadex
 Version:	1.7.0
-Release:	0.3
+Release:	0.4
 Epoch:		0
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://www.teaser.fr/~amajorel/yadex/%{name}-%{version}.tar.gz
 # Source0-md5:	d341abe066525394082edfd520af86ae
+Patch0:		%{name}-typedef.patch
 URL:		http://www.teaser.fr/~amajorel/yadex/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,6 +41,7 @@ których nie mia³ DEU, a u³atwiaj±cych niektóre zadania.
 
 %prep
 %setup -q
+%patch0 -p1
 
 sed -i -e '/iwad/s/local\///' yadex.cfg
 
@@ -49,6 +51,10 @@ sed -i -e '/iwad/s/local\///' yadex.cfg
 	--prefix %{_prefix} \
 	--cc "%{__cc}" \
 	--cxx "%{__cxx}"
+
+# it sure is strange build system.
+cp -p obj/*/config.h src/config.h
+cp -p obj/*/config.cc src/config.cc
 
 %{__make} \
     X11LIBDIR=/usr/X11R6/%{_lib}
