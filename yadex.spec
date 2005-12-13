@@ -73,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES FAQ README TODO VERSION
 %dir %{_sysconfdir}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}
 %{_mandir}/man6/*
