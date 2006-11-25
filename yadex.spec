@@ -6,11 +6,12 @@ Release:	1
 Epoch:		0
 License:	GPL v2
 Group:		Applications/Games
-URL:		http://www.teaser.fr/~amajorel/yadex/
 Source0:	http://www.teaser.fr/~amajorel/yadex/%{name}-%{version}.tar.gz
 # Source0-md5:	d341abe066525394082edfd520af86ae
 Patch0:		%{name}-typedef.patch
 Patch1:		http://glbsp.sourceforge.net/yadex/Yadex_170_ALL.diff
+URL:		http://www.teaser.fr/~amajorel/yadex/
+BuildRequires:	FILLME
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/%{name}
@@ -55,7 +56,7 @@ sed -i -e '/iwad/s/local\///' yadex.cfg
 	--cxx "%{__cxx}"
 
 %{__make} \
-    X11LIBDIR=/usr/X11R6/%{_lib}
+	X11LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
