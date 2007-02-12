@@ -1,5 +1,5 @@
 Summary:	A Doom level (wad) editor
-Summary(pl.UTF-8):   Edytor poziomów Dooma (wad)
+Summary(pl.UTF-8):	Edytor poziomów Dooma (wad)
 Name:		yadex
 Version:	1.7.0
 Release:	1
