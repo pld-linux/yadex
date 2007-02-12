@@ -1,5 +1,5 @@
 Summary:	A Doom level (wad) editor
-Summary(pl):	Edytor poziomów Dooma (wad)
+Summary(pl.UTF-8):   Edytor poziomÃ³w Dooma (wad)
 Name:		yadex
 Version:	1.7.0
 Release:	1
@@ -29,17 +29,17 @@ detail but on the flip side allows you to control very precisely what
 you are doing. In addition, it has many advanced functions that DEU
 didn't have, to make certain tedious tasks easy.
 
-%description -l pl
-Yadex to edytor poziomów Dooma (wad) dla systemów uniksowych z X, w
-tym Linuksa. Obs³uguje Dooma alpha, Dooma beta, Dooma, Ultimate Dooma,
-Final Dooma, Dooma II, Heretica, a tak¿e, w mniej lub bardziej
-ograniczony sposób, Hexena i Strife.
+%description -l pl.UTF-8
+Yadex to edytor poziomÃ³w Dooma (wad) dla systemÃ³w uniksowych z X, w
+tym Linuksa. ObsÅ‚uguje Dooma alpha, Dooma beta, Dooma, Ultimate Dooma,
+Final Dooma, Dooma II, Heretica, a takÅ¼e, w mniej lub bardziej
+ograniczony sposÃ³b, Hexena i Strife.
 
-Yadex wywodzi siê z DEU 5.21. Dlatego, jak mo¿na by³oby oczekiwaæ,
-jest to raczej niskopoziomowy edytor wymagaj±cy dbania o wiele
-szczegó³ów, ale z drugiej strony umo¿liwiaj±cy bardzo precyzyjn±
-kontrolê nad tym, co robimy. Ponadto ma wiele zaawansowanych funkcji,
-których nie mia³ DEU, a u³atwiaj±cych niektóre zadania.
+Yadex wywodzi siÄ™ z DEU 5.21. Dlatego, jak moÅ¼na byÅ‚oby oczekiwaÄ‡,
+jest to raczej niskopoziomowy edytor wymagajÄ…cy dbania o wiele
+szczegÃ³Å‚Ã³w, ale z drugiej strony umoÅ¼liwiajÄ…cy bardzo precyzyjnÄ…
+kontrolÄ™ nad tym, co robimy. Ponadto ma wiele zaawansowanych funkcji,
+ktÃ³rych nie miaÅ‚ DEU, a uÅ‚atwiajÄ…cych niektÃ³re zadania.
 
 %prep
 %setup -q
