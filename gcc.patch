@@ -9,3 +9,15 @@
      win_vis_class = vis_info->class;
  #endif
      win_ncolours  = vis_info->colormap_size;
+--- yadex-1.7.0/src/wadlist.cc~	2011-01-20 05:00:14.000000000 +0200
++++ yadex-1.7.0/src/wadlist.cc	2011-01-20 05:00:49.088648499 +0200
+@@ -175,7 +175,8 @@
+   priv->iter = priv->list.erase (i);
+   if (priv->iter == priv->list.begin ())
+   {
+-    priv->iter = 0;			// Catch bugs
++//  FIXME: no eqivalent code here
++//  priv->iter = 0;			// Catch bugs
+     priv->rewound = true;
+   }
+ }
