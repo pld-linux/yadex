@@ -3,15 +3,15 @@ Summary(pl.UTF-8):	Edytor poziomów Dooma (wad)
 Name:		yadex
 Version:	1.7.0
 Release:	1
-Epoch:		0
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://www.teaser.fr/~amajorel/yadex/%{name}-%{version}.tar.gz
 # Source0-md5:	d341abe066525394082edfd520af86ae
 Patch0:		%{name}-typedef.patch
 Patch1:		http://glbsp.sourceforge.net/yadex/Yadex_170_ALL.diff
+BuildRequires:	boost-devel
+Patch2:		gcc.patch
 URL:		http://www.teaser.fr/~amajorel/yadex/
-BuildRequires:	FILLME
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/%{name}
@@ -45,6 +45,10 @@ których nie miał DEU, a ułatwiających niektóre zadania.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+
+# use system boost
+rm -rf boost
 
 sed -i -e '/iwad/s/local\///' yadex.cfg
 
@@ -56,16 +60,17 @@ sed -i -e '/iwad/s/local\///' yadex.cfg
 	--cxx "%{__cxx}"
 
 %{__make} \
+	X11INCLUDEDIR=%{_includedir} \
 	X11LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_mandir}/man6,%{_datadir}}
 
-install obj/0/yadex $RPM_BUILD_ROOT%{_bindir}
-install ygd/* $RPM_BUILD_ROOT%{_datadir}
-install doc/yadex.6 $RPM_BUILD_ROOT%{_mandir}/man6
-install yadex.cfg $RPM_BUILD_ROOT%{_sysconfdir}
+install -p obj/0/yadex $RPM_BUILD_ROOT%{_bindir}
+cp -a ygd/* $RPM_BUILD_ROOT%{_datadir}
+cp -p doc/yadex.6 $RPM_BUILD_ROOT%{_mandir}/man6
+cp -p yadex.cfg $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

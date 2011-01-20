@@ -1,0 +1,11 @@
+--- yadex-1.7.0/src/gfx.cc~	2003-12-15 02:50:02.000000000 +0200
++++ yadex-1.7.0/src/gfx.cc	2011-01-20 04:54:48.337030025 +0200
+@@ -310,7 +310,7 @@
+     win_vis_id    = vis_info->visualid;
+ #if defined _cplusplus || defined __cplusplus
+     win_vis_class = vis_info->c_class;
+-#elif
++#else
+     win_vis_class = vis_info->class;
+ #endif
+     win_ncolours  = vis_info->colormap_size;
